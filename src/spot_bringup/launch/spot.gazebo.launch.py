@@ -11,10 +11,10 @@ from launch_ros.parameter_descriptions import ParameterFile
 
 
 def generate_launch_description():
-    world_file = LaunchConfiguration('world_file', default='simple_tunnel.sdf')
+    world_file = LaunchConfiguration('world_file', default='electrical_substation.sdf')
     world_file_arg = DeclareLaunchArgument(
         'world_file',
-        default_value='simple_tunnel.sdf',
+        default_value='electrical_substation.sdf',
         description='Name of the world file to load'
     )
 
@@ -38,7 +38,7 @@ def generate_launch_description():
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
             launch_arguments={
                 'gz_args': [
-                    '-r -s',
+                    '-r ',
                     PathJoinSubstitution([
                         pkg_spot_gazebo, 
                         'worlds',
